@@ -1,13 +1,18 @@
 import React from 'react'
 import {Message} from "./Message";
 
-export const messageData = {
+const messageData = {
     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
     name: 'Some Name',
     message: 'some text',
     time: '22:00',
 }
-
+export type messagePropsType = {
+    avatar: string,
+    name: string,
+    message: string,
+    time: string
+}
 
 
 function HW1() {

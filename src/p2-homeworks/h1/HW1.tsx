@@ -7,12 +7,7 @@ const messageData = {
     message: 'some text',
     time: '22:00',
 }
-export type messagePropsType = {
-    avatar: string,
-    name: string,
-    message: string,
-    time: string
-}
+
 
 
 function HW1() {
@@ -20,7 +15,6 @@ function HW1() {
         <div>
             <hr/>
             homeworks 1
-
             {/*should work (должно работать)*/}
 
             <Message

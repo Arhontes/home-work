@@ -1,10 +1,15 @@
 import React from 'react'
 import message from './Message.module.css'
-import {messagePropsType} from "./HW1";
 
 
+type MessagePropsType = {
+    avatar: string,
+    name: string,
+    message: string,
+    time: string
+}
 
-export const Message = (props: messagePropsType) => {
+export const Message = (props: MessagePropsType) => {
     return (
         <div className={message.message_container}>
 

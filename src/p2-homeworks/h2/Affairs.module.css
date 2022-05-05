@@ -1,3 +1,31 @@
-.someClass {
+.aff_wrapper{
+
+    display: flex;
+    background-color:darkslateblue;
+    flex-direction: column;
+    padding:20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border:black solid 3px;
+    overflow: hidden;
+}
+.button_console{
+    align-self: center;
+    order: 1;
+}
+.affairs_list{
+ order: 2;
+    padding-top: 10px;
+}
+.affair{
+    color: darkgoldenrod;
+    border-bottom: gold solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+.button_wrapper{
+display: flex;
+}
+.button {
 
 }

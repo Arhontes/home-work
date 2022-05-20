@@ -1,7 +1,19 @@
-.default {
+.default{
+ background-color: gold;
+}
+.default:hover {
+    font-weight: bold;
+}
+.red {
+    background: red ;
 
 }
-
-.red {
-    background: red;
+.red:hover{
+    font-weight: bold;
+}
+.default:disabled{
+    background-color: gray;
+}
+.default:disabled:hover{
+    font-weight: bold;
 }

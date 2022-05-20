@@ -3,8 +3,8 @@ import s from './Greeting.module.css'
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: (name:string) => void // need to fix any
-    addUser: (name: string) => void // need to fix any
+    setNameCallback: (value:ChangeEvent<HTMLInputElement>) => void // need to fix any
+    addUser: () => void // need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
 }
@@ -19,14 +19,12 @@ const Greeting: React.FC<GreetingPropsType> = ({
                                                } // деструктуризация пропсов
 ) => {
 
-    const onChangeInputHandler=(props:ChangeEvent<HTMLInputElement>)=>{
-        setNameCallback(props.currentTarget.value)
-    }
+    const inputClass = name===''?s.error:s.someClass
     return (
         <div>
-            <input value={name} onChange={onChangeInputHandler} className={name===''?s.error:s.someClass}/>
+            <input value={name} onChange={setNameCallback} className={inputClass}/>
             <span>{error}</span>
-            <button onClick={()=>addUser(name)}>add</button>
+            <button onClick={addUser}>add</button>
             <span>{totalUsers}</span>
         </div>
     )

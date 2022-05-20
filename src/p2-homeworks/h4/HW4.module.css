@@ -1,5 +1,6 @@
 .blue {
-    border-bottom: 5px solid blue;
+    border-bottom: 2px solid deepskyblue;
+    border-radius: 3px;
 }
 
 .column {

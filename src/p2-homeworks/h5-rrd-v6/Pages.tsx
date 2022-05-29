@@ -8,6 +8,12 @@ export const PATH = {
     'JUNIOR+': '/junior+'
 }
 
+function Junior() {
+    return <div>Junior</div>;
+}
+function JuniorPlus() {
+    return <div>Junior+</div>;
+}
 function Pages() {
     return (
         <div>
@@ -19,9 +25,9 @@ function Pages() {
 
                 <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
 
-                <Route path={PATH.JUNIOR} element={<Navigate to={PATH.PRE_JUNIOR}/>}/>
+                <Route path={PATH.JUNIOR} element={<Junior />}/>
 
-                <Route path={PATH["JUNIOR+"]} element={<PreJunior/>}/>
+                <Route path={PATH["JUNIOR+"]} element={<JuniorPlus/>}/>
 
 
                 {/*он отрисуется если пользователь захочет попасть на несуществующую страницу*/}

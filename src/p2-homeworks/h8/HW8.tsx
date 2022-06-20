@@ -1,10 +1,14 @@
 import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import {CheckAgeAC, homeWorkReducer, SortByNameAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
-// export type UserType =
+export type UserType = {
+    _id: number
+    name: string
+    age: number
+}
 
-const initialPeople = [
+const initialPeople:Array<UserType> = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -14,28 +18,31 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<Array<UserType>>(initialPeople) // need to fix any
 
     // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
-        </div>
+    const finalPeople = people.map((p) => (
+        <tr key={p._id}>
+            <td>{p.name}</td> <td>age:{p.age}</td>
+        </tr>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
-
+    const sortUp = () => setPeople(homeWorkReducer(initialPeople, SortByNameAC("UP")))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, SortByNameAC("DOWN")))
+    const checkAge = ()=> setPeople(homeWorkReducer(initialPeople, CheckAgeAC(18)))
     return (
         <div>
             <hr/>
-            homeworks 8
+            <h2>homeworks 8</h2>
 
             {/*should work (должно работать)*/}
-            {finalPeople}
+            <table>
+                {finalPeople}
+            </table>
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
+            <SuperButton onClick={sortUp}>sort up</SuperButton>
+            <SuperButton onClick={sortDown}>sort down</SuperButton>
+            <SuperButton onClick={checkAge}> check 18</SuperButton>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}

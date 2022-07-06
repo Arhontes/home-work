@@ -16,5 +16,4 @@ function Header() {
         </div>
     )
 }
-{/*className={navData => navData.isActive ? n.active : n.item}*/}
 export default Header
